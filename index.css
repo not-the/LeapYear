@@ -1,0 +1,77 @@
+::selection {
+    background-color: greenyellow;
+    color: black;
+}
+
+body {
+    background: black;
+    color: greenyellow;
+    margin-top: 40px;
+}
+
+/* body::-webkit-scrollbar {
+    width: 5em;
+    color: white;
+}
+
+body::-webkit-scrollbar-track {
+    color: greenyellow;
+} */
+
+.container {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+h1 {
+    display: inline-block;
+    font-size: 30pt;
+    font-family: monospace;
+}
+
+button {
+    /* display: inline-block; */
+    background-color: black;
+    color: greenyellow;
+    font-size: 13pt;
+    text-decoration: underline;
+    cursor: pointer;
+    border: 1px solid greenyellow;
+    padding: 10px 20px;
+    margin-left: 20px;
+    transform: translateY(28px);
+    float: right;
+}
+
+button:hover {
+    background-color: greenyellow;
+    color: black;
+    transition: 0.2s;
+}
+
+button:active {
+    transform: translateY(34px);
+}
+
+#output {
+    font-size: 14pt;
+    overflow-y: auto;
+    height: 75vh;
+}
+
+@media only screen and (max-width: 726px) {
+    button:nth-of-type(2) {
+        transform: translateY(-10px);
+        margin-left: 5px;
+        transition: 0.3s;
+    }
+}
+
+@media only screen and (max-width: 508px) {
+    button:nth-of-type(2) {
+        transform: translateY(-10px);
+        margin-left: 5px;
+        transition: 0.3s;
+    }
+}
