@@ -8,15 +8,42 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
+    <!-- Popup -->
+    <div id="darken"></div>
+    <div id="popup">
+        <div id="warning">End year must be greater than start year</div>
+        <form action="">
+            <!-- Start Year -->
+            <label for="startYear">Start Year: </label>
+            <input type="number" id="startYear" value="1900"><br>
+
+            <!-- End Year -->
+            <label for="endYear">End Year: </label>
+            <input type="number" id="endYear" value="2100">
+            
+            <button type="button" id="submit">Submit</button>
+        </form>
+    </div>
+    
+    <!-- Container -->
     <div class="container">
+        <!-- Title section -->
         <h1>Leap Year list</h1>
-        <button onclick="displayType()">Change Display</button>
-        <button onclick="promptInput()">Change Year Range</button>
+        <br class="button-align">
+        <button onclick="displayType()" class="button-main changedisplay">Change Display</button>
+        <!-- <button onclick="promptInput()">Change Year Range</button> -->
+
+        <!-- Popup form -->
+        <button onclick="popup()" class="button-main">Change Year Range</button>
+
+
         
+        <!-- Output -->
         <p id="output">
             Awaiting input
         </p>
     </div>
+
 
 
 

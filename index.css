@@ -1,22 +1,13 @@
-::selection {
-    background-color: greenyellow;
-    color: black;
-}
+
+
 
 body {
-    background: black;
-    color: greenyellow;
+    background-color: rgb(240, 240, 240);
+    /* color: white; */
     margin-top: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.75em;
 }
-
-/* body::-webkit-scrollbar {
-    width: 5em;
-    color: white;
-}
-
-body::-webkit-scrollbar-track {
-    color: greenyellow;
-} */
 
 .container {
     max-width: 800px;
@@ -27,51 +18,185 @@ body::-webkit-scrollbar-track {
 h1 {
     display: inline-block;
     font-size: 30pt;
-    font-family: monospace;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
+/* Form buttons */
 button {
     /* display: inline-block; */
-    background-color: black;
-    color: greenyellow;
-    font-size: 13pt;
-    text-decoration: underline;
+    background-color: #46a6e6;
+    color: white;
+    font-size: 11pt;
     cursor: pointer;
-    border: 1px solid greenyellow;
-    padding: 10px 20px;
+    border: 3px solid #46a6e6;
+    padding: 8px 20px;
     margin-left: 20px;
     transform: translateY(28px);
     float: right;
+    border-radius: 20px;
+    z-index: 0;
+    font-weight: bold;
+
+    box-sizing: border-box;
 }
 
 button:hover {
-    background-color: greenyellow;
-    color: black;
+    background-color: #4695ca;
+    color: #DDDDDD;
     transition: 0.2s;
+    text-decoration: underline;
 }
 
 button:active {
-    transform: translateY(34px);
+    transform: translateY(30px);
+}
+
+.changedisplay {
+    background-color: white;
+    color: #46a6e6;
+    border: 3px solid #46a6e6;
 }
 
 #output {
     font-size: 14pt;
     overflow-y: auto;
-    height: 75vh;
+    height: 70vh;
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+    margin-top: 19px;
 }
 
-@media only screen and (max-width: 726px) {
-    button:nth-of-type(2) {
-        transform: translateY(-10px);
-        margin-left: 5px;
-        transition: 0.3s;
+.button-align {
+    display: none;
+}
+
+#popup {
+    position: absolute;
+    margin: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.493);
+    padding: 24px 32px 0px 32px;
+    border-radius: 20px;
+
+    z-index: 2;
+    visibility: hidden;
+
+    animation: none;
+}
+
+#popup input {
+    box-sizing: border-box;
+    color: rgb(78, 78, 78);
+    background-color: rgb(235, 235, 235);
+    border: none;
+    border-radius: 5px;
+    padding: 3px;
+    width: 160px;
+}
+
+#popup input:focus {
+    background-color: white;
+    border: 1px solid gray;
+    transition: 0.25s;
+    transform: scale(1.05, 1.05);
+}
+
+#warning {
+    background-color: rgb(201, 78, 78);
+    color: white;
+    position: absolute;
+    margin-left: 10px;
+    margin-top: -60px;
+    padding: 10px 20px 24px 20px;
+    clip-path: polygon(100% 0, 100% 75%, 47% 75%, 50% 100%, 53% 75%, 0 75%, 0 0);
+
+    visibility: hidden;
+}
+
+#submit {
+    /* float: none; */
+    transform: translate(0, -26px);
+    height: 52px;
+    width: 90px;
+}
+
+form label {
+    display: inline-block;
+    width: 80px;
+}
+
+#darken {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    margin-top: -40px;
+    margin-lefT: -8px;
+    z-index: 1;
+    visibility: hidden;
+
+    background-color: rgba(0, 0, 0, 0.404);
+    backdrop-filter: blur(5px);
+}
+
+
+
+/* Animations */
+@keyframes floatin {
+    0% {
+        transform: translateY(5px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
     }
 }
 
-@media only screen and (max-width: 508px) {
-    button:nth-of-type(2) {
-        transform: translateY(-10px);
-        margin-left: 5px;
-        transition: 0.3s;
+@keyframes fadein {
+    0%   {
+        opacity: 0;
+        margin-top: 20px;
+    }
+    100% {
+        opacity: 1;
+        margin-top: 0px;
+    }
+}
+
+@keyframes fadeout {
+    0%   {
+        opacity: 1;
+        margin-top: 0px;
+    }
+    100% {
+        opacity: 0;
+        margin-top: 20px;
+    }
+}
+
+@keyframes opacityin {
+    0%   {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+@keyframes opacityout {
+    0%   {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+/* Media queries */
+@media screen and (max-width: 750px) {
+    .button-main {
+        float: none;
+        margin: 0 0 32px 10px;
+    }
+
+    .button-align {
+        display: inherit;
     }
 }
